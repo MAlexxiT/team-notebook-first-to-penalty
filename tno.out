@@ -13,7 +13,8 @@
 \BOOKMARK [2][-]{subsection.6.2}{Multiple Hashings DS}{section.6}% 13
 \BOOKMARK [2][-]{subsection.6.3}{Permute chars of string}{section.6}% 14
 \BOOKMARK [2][-]{subsection.6.4}{Longest common subsequence}{section.6}% 15
-\BOOKMARK [1][-]{section.7}{Flow}{}% 16
-\BOOKMARK [1][-]{section.8}{Miscellaneous}{}% 17
-\BOOKMARK [2][-]{subsection.8.1}{Bit Manipulation}{section.8}% 18
-\BOOKMARK [1][-]{section.9}{Testing}{}% 19
+\BOOKMARK [2][-]{subsection.6.5}{KMP}{section.6}% 16
+\BOOKMARK [1][-]{section.7}{Flow}{}% 17
+\BOOKMARK [1][-]{section.8}{Miscellaneous}{}% 18
+\BOOKMARK [2][-]{subsection.8.1}{Bit Manipulation}{section.8}% 19
+\BOOKMARK [1][-]{section.9}{Testing}{}% 20

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.2.4)  6 FEB 2023 20:06
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2023.2.4)  9 FEB 2023 18:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -419,7 +419,7 @@ Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
 File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
-<penalty.png, id=80, 49.68562pt x 24.84282pt>
+<penalty.png, id=84, 49.68562pt x 24.84282pt>
 File: penalty.png Graphic file (type png)
 <use penalty.png>
 Package pdftex.def Info: penalty.png  used on input line 7.
@@ -450,28 +450,24 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 (./Math/sieve.cpp) (./Math/sievefact.cpp [2]) (./Strings/explode.cpp)
 (./Strings/multipleHashing.cpp) (./Strings/permute.cpp [3]) (./Strings/lcs.cpp)
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-(./Miscellaneous/bitManip.cpp [4]) (./Miscellaneous/moreBitManin.cpp)
-
+(./Strings/kmp.cpp) (./Miscellaneous/bitManip.cpp [4])
+(./Miscellaneous/moreBitManin.cpp) 
 AED: lastpage setting LastPage
 [5]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 76.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 76.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 78.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 78.
  (./tno.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 76.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 76.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 78.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 78.
 Package rerunfilecheck Info: File `tno.out' has not changed.
-(rerunfilecheck)             Checksum: 673B655EE1140408DD23E37F3F1EB05F;1098.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 76.
+(rerunfilecheck)             Checksum: C58083767978BB2F18623A5FC3271D85;1151.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 78.
  ) 
 Here is how much of TeX's memory you used:
- 9764 strings out of 483183
- 138580 string characters out of 5966293
- 884591 words of memory out of 5000000
- 24248 multiletter control sequences out of 15000+600000
+ 9807 strings out of 483183
+ 139115 string characters out of 5966293
+ 882591 words of memory out of 5000000
+ 24265 multiletter control sequences out of 15000+600000
  536329 words of font info for 40 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  39i,12n,62p,264b,2023s stack positions out of 5000i,500n,10000p,200000b,80000s
@@ -487,10 +483,10 @@ msfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
 cm/cmsy10.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cms
 y7.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmtt10.pfb
 >
-Output written on tno.pdf (5 pages, 171379 bytes).
+Output written on tno.pdf (5 pages, 173221 bytes).
 PDF statistics:
- 551 PDF objects out of 1000 (max. 8388607)
- 525 compressed objects within 6 object streams
- 325 named destinations out of 1000 (max. 500000)
- 158 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 581 PDF objects out of 1000 (max. 8388607)
+ 555 compressed objects within 6 object streams
+ 348 named destinations out of 1000 (max. 500000)
+ 166 words of extra memory for PDF output out of 10000 (max. 10000000)
 
