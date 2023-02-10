@@ -1,0 +1,20 @@
+\babel@toc {english}{}
+\contentsline {section}{\numberline {1}Template}{1}{section.1}%
+\contentsline {section}{\numberline {2}Data structures}{1}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Simplified DSU (Stolen from GGDem)}{1}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Disjoint Set Union}{1}{subsection.2.2}%
+\contentsline {section}{\numberline {3}Graphs}{2}{section.3}%
+\contentsline {section}{\numberline {4}Math}{2}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Identities}{2}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Sieve Of Eratosthenes}{2}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Sieve-based Factorization}{2}{subsection.4.3}%
+\contentsline {section}{\numberline {5}Geometry}{3}{section.5}%
+\contentsline {section}{\numberline {6}Strings}{3}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Explode by token}{3}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Multiple Hashings DS}{3}{subsection.6.2}%
+\contentsline {subsection}{\numberline {6.3}Permute chars of string}{3}{subsection.6.3}%
+\contentsline {subsection}{\numberline {6.4}Longest common subsequence}{4}{subsection.6.4}%
+\contentsline {section}{\numberline {7}Flow}{4}{section.7}%
+\contentsline {section}{\numberline {8}Miscellaneous}{4}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Bit Manipulation}{4}{subsection.8.1}%
+\contentsline {section}{\numberline {9}Testing}{5}{section.9}%

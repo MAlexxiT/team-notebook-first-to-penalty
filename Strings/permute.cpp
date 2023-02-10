@@ -8,5 +8,4 @@ void permute(string str){
 	do {
 		cout<<str<<endl;
 	} while (next_permutation(str.begin(), str.end()));
-	return 0;
 }
