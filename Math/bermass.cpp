@@ -1,4 +1,5 @@
 typedef long long int ll;
+//Obtiene recurrencia lineal dados los primeros elementos en O(n^2)
 vector<ll> berlekampMassey(const vector<ll> &s) {
     vector<ll> c;    
     vector<ll> oldC; 
