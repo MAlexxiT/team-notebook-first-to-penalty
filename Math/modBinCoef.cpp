@@ -8,5 +8,8 @@ public:
         for(long long int i = 1; i<=l; i++) fact[i] = (fact[i-1]*i)%inf;    
     }
     //perm = (fact[n] * modinverse(fac[n-k],inf)%inf;
-    long long int query(long long int n, long long int k){ return fact[n] * modinverse((fac[n-k]*fact[k])%inf,inf)%inf;} 
+    long long int query(long long int n, long long int k){ 
+        if(n<k) return 0;
+        return (fact[n] * modinverse((fac[n-k]*fact[k])%inf,inf))%inf;
+    } 
 };
