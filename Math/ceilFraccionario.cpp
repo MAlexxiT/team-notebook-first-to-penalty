@@ -1,0 +1,1 @@
+long long int techo(long long int num, long long int den){ return (num+den-1)/den;}  
