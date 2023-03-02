@@ -1,5 +1,3 @@
-#include "bits/stdc++.h"
-using namespace std;
 struct multhash{
     unsigned long long int h1,h2;
     unsigned long long int alf[257];
@@ -44,6 +42,3 @@ public:
 //909090909090909091
 //VALORES PARA P, USAR PRIMOS MAYORES A |Alfabeto|
 //31,47,53,61,79
-int main(){
-    return 0;
-}
