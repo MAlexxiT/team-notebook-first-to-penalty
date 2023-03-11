@@ -12,7 +12,7 @@ long long int gcd(long long int a, long long int b, long long int& x, long long 
 }
 long long int modinverse(long long int b, long long int m){
     long long int x,y;
-    long long int d = extEuclid(b,inf,x,y);
+    long long int d = gcd(b,inf,x,y);
     if(d!=1) return -1;
     return ((x%inf)+inf)%inf;
 }
