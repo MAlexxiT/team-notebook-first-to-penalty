@@ -1,7 +1,8 @@
 struct triver {
     char alphabet;
+    bool ter;
     vector<triver*> child;
-    triver(char a): alphabet(a) { child.assign(26, NULL); }
+    triver(char a): alphabet(a) { child.assign(26, NULL); ter = false; }
 };
 class trie{
 private:                                         
@@ -14,6 +15,7 @@ public:
             if(curr->child[l-'A'] == NULL) curr->child[l-'A'] =  new triver(l);
             curr = curr->child[l-'A'];
         }
+        curr->ter = true;
     }
     bool search(string s){
         triver* curr = root;
@@ -21,6 +23,7 @@ public:
             if(curr == NULL) break;
             curr = curr->child[l-'A'];
         }
-        return !(curr == NULL);
+        if(curr == NULL) return false;
+        return curr->ter;
     }
 };
