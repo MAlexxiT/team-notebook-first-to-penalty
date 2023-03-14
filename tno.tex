@@ -64,6 +64,12 @@ $F_{n+i}F_{n+j} - F_nF_{n+i+j} = (-1)^n F_iF_j$
 (Möbius Inv. Formula)
 Let $g(n) = \sum_{d\mid n} f(d)$, then $f(n)=\sum{d\mid n} g(d) \mu\left(\frac{n}{d})\right)$.
 }
+\\
+Permutaciones objetos repetidos
+$P(n,k) = \frac{P(n,k)}{n_{1}!n_{2}!...}$ 
+\\
+Separadores, Ecuaciones lineares $a$ variables $= b$  
+$\left(\binom{a}{b}\right) = \binom{a+b-1}{b} = \binom{a+b-1}{a-1}$
 \subsection{Binary Exponentiation and modArith}
 \cppfile{Math/binpow.cpp}
 \subsection{Modular Inverse (dividir mod)}
@@ -116,7 +122,8 @@ Let $g(n) = \sum_{d\mid n} f(d)$, then $f(n)=\sum{d\mid n} g(d) \mu\left(\frac{n
 \cppfile{Clasicos/jobsTwoMach.cpp}
 
 \section{Flow}
-
+\subsection{Dinic, thx GGDem}
+\cppfile{Flow/dinic.cpp}
 
 \section{Miscellaneous}
 
