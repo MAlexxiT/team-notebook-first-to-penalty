@@ -9,13 +9,13 @@ long long int build(int sti,int csize){
 void innit(){
     for(int i = 0; i<stsize; i++) st[i] = neut;
     /*int d = 0;
-    for(int i = stsize-n; i<stsize && d<n; i++){
+    for(int i = stsize-n-1; i<stsize && d<n; i++){
         st[i] = arr[d];d++;
     }*/
     build(0,n);
 }
 void upd(int ind, long long int val){
-    ind = stsize-n+ind;
+    ind = stsize-n+ind-1;
     st[ind] = val;ind--;ind/=2;
     while(true){
         st[ind] = fst(st[ind*2+1],st[ind*2+2]);        
