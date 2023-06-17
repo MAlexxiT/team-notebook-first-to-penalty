@@ -1,4 +1,5 @@
 //MAXN = 2^k, n = tam arreglo inicial
+#define MAXN 262160
 int stsize; long long int neut;int n;
 long long int* st = new long long int[2*MAXN-1]();
 long long int fst(long long int a, long long int b);
@@ -9,13 +10,13 @@ long long int build(int sti,int csize){
 void innit(){
     for(int i = 0; i<stsize; i++) st[i] = neut;
     /*int d = 0;
-    for(int i = stsize-n-1; i<stsize && d<n; i++){
+    for(int i = stsize-n; i<stsize && d<n; i++){
         st[i] = arr[d];d++;
     }*/
     build(0,n);
 }
 void upd(int ind, long long int val){
-    ind = stsize-n+ind-1;
+    ind = stsize-n+ind;
     st[ind] = val;ind--;ind/=2;
     while(true){
         st[ind] = fst(st[ind*2+1],st[ind*2+2]);        
@@ -33,5 +34,6 @@ long long int rqu(int l, int r,int sti, int ls, int rs){
 long long int query(int l, int r){
     return rqu(l,r,0,0,n-1);
 }
-//uso, inicializa neut, determina n (asegurate que sea una potencia de 2), define fst para determinar
-//la opracion del segment tree
+//uso, inicializa neut, n = primera potencia de 2 >= n del problema, stsize = 2*n-1
+//llena arr de neutros hasta que su tam sea el nuevo n
+//DEFINE LA FUNCION fst
