@@ -86,26 +86,10 @@ int getlce(int l, int r){
     return recque(l,r,0,0,stsize/2);
 }
 int buscarRec(int l, int r,int lcp,int eas){
+    if(l>r) return -1;
     int m = (l+r)/2;
     //string curr = T.substr(sa[m],T.size()-sa[m]);
     int lce = (eas>m?getlce(m+1,eas):getlce(eas+1,m));
-    if(r-l<=1){
-        lce = (eas>l?getlce(l+1,eas):getlce(eas+1,l));
-        bool f = (lce==lcp);
-        for(int i = lcp,n= T.size(); f && sa[l]+i<n && i<P.size(); i++){
-            if(P[i]!=T[sa[l]+i]) f = false;
-        }
-        
-        if(f) return l;
-        lce = (eas>r?getlce(r+1,eas):getlce(eas+1,r));
-        f = (lce==lcp);
-        for(int i = lcp,n= T.size(); f && sa[r]+i<n && i<P.size(); i++){
-            if(P[i]!=T[sa[r]+i]) f = false;
-        }
-        if(f) return r;
-        return -1;
-    }
-    
     if(lce>lcp){
         if(eas<m) return buscarRec(m+1,r,lcp,eas);
         if(eas>m) return buscarRec(l,m-1,lcp,eas);
