@@ -1,5 +1,5 @@
 //MAXN = 2^k, n = tam arreglo inicial
-#define MAXN 524288
+#define MAXN 262160
 vector<int> arr;
 int stsize; long long int neut;int n;
 long long int* st = new long long int[2*MAXN-1]();
@@ -13,7 +13,7 @@ bool hasChildren(int sti){sti*=2;sti++;sti++;return sti<stsize;}
 void innit(){
     for(int i = 0; i<stsize; i++) st[i] = neut;
     int d = 0;
-    for(int i = stsize-n-1; i<stsize && d<n; i++) {st[i] = arr[d];d++;}
+    for(int i = stsize-n; i<stsize && d<n; i++) {st[i] = arr[d];d++;}
     build(0,n);
 }
 void updrec(int l,int r, int sl, int sr,int sti, long long int val){
@@ -27,7 +27,7 @@ void updrec(int l,int r, int sl, int sr,int sti, long long int val){
     int sm = (sl+sr)/2;
     updrec(l,r,sl,sm,sti*2+1,val);
     updrec(l,r,sm+1,sr,sti*2+2,val);
-    st[sti] = fst(st[sti*2+1],st[sti*2+2]);  
+    st[sti] = fst(st[sti*2+1]+pendientes[sti*2+1],st[sti*2+2]+pendientes[sti*2+2]);  
 }
 void upd(int l, int r, long long int val){updrec(l,r,0,n-1,0,val);}
 
@@ -47,6 +47,6 @@ long long int rqu(int l, int r,int sti, int ls, int rs){
 long long int query(int l, int r){
     return rqu(l,r,0,0,n-1);
 }
-//uso, inicializa neut, lee n y arr, iguala n a la potencia de dos mas cercana y mayor
-//determina stsize = 2*n (asegurate que sea una potencia de 2), define fst para determinar
-//la opracion del segment tree
+//uso, inicializa neut, n = primera potencia de 2 >= n del problema, stsize = 2*n-1
+//llena arr de neutros hasta que su tam sea el nuevo n
+//DEFINE LA FUNCION fst
