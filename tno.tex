@@ -45,7 +45,25 @@
 \section{Math}
 \subsection{Identities}
 {
+\textbf{Coeficientes binomiales.}
+
 $(a+b)^{n} = \sigma_{k = 0}^{n} \binom{n}{k}a^{n-k}b^{k}$
+
+$\binom{n}{k} = \binom{n}{n-k}$
+
+$\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$
+
+$k\binom{n}{k} = n\binom{n-1}{k-1}$
+
+$\sigma_{k = 0}{n}\binom{n}{k} = 2^{n}$
+
+$\sigma_{k = 0}^{n} (-1)^{k}\binom{n}{k} = 0$
+
+$\binom{n+m}{t} = \sigma_{k = 0}^{t}\binom{n}{k}\binom{m}{t-k}$
+
+$\sigma_{j = k}^{n} \binom{j}{k} = \binom{n+1}{k+1}$
+
+\textbf{Numeros Catalanes.}
 
 $C_n = \frac{2(2n-1)}{n+1} C_{n-1}$
 
@@ -63,15 +81,46 @@ $\sum_{i=1}^n F_i = F_{n+2}-1$
 
 $F_{n+i}F_{n+j} - F_nF_{n+i+j} = (-1)^n F_iF_j$
 
-(Möbius Inv. Formula)
+\textbf{(Möbius Function)}
+
+0 if n is square-free
+
+1 if n got even amount of distinct prime factors
+
+0 if n got odd amount of distinct prime factors
+
+\textbf{(Möbius Inv. Formula)}
+
 Let $g(n) = \sum_{d\mid n} f(d)$, then $f(n)=\sum{d\mid n} g(d) \mu\left(\frac{n}{d})\right)$.
 }
 \\
-Permutaciones objetos repetidos
+\textbf{Permutaciones objetos repetidos}
+
 $P(n,k) = \frac{P(n,k)}{n_{1}!n_{2}!...}$ 
 \\
-Separadores, Ecuaciones lineares $a$ variables $= b$  
+\textbf{Separadores, Ecuaciones lineares $a$ variables $= b$}
+  
 $\left(\binom{a}{b}\right) = \binom{a+b-1}{b} = \binom{a+b-1}{a-1}$
+
+\textbf{Teorema chino}
+
+sean $\{n_{1}, n_{2},..., n_{k} \}$ primos relativos\\
+
+$P = n_{1}\cdot n_{2}\cdot ...\cdot n_{k}$
+
+$P_{i} = \frac{P}{n_{i}}$
+
+$x\cong a_{1}(n_{1})$
+
+$x\cong a_{2}(n_{2})$
+$...$
+$x\cong a_{k}(n_{k})$
+
+$P_{1}S_{1} \cong 1(n_{1})$ Donde $S$ soluciones.
+
+$x = P_{1}S_{1}a_{1} + P_{2}S_{2}a_{2} ... P_{k}S_{k}a_{k}$
+
+
 \subsection{Binary Exponentiation and modArith}
 \cppfile{Math/binpow.cpp}
 \subsection{Modular Inverse (dividir mod)}
