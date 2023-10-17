@@ -45,6 +45,8 @@
 \section{Math}
 \subsection{Identities}
 {
+$(a+b)^{n} = \sigma_{k = 0}^{n} \binom{n}{k}a^{n-k}b^{k}$
+
 $C_n = \frac{2(2n-1)}{n+1} C_{n-1}$
 
 $C_n = \frac{1}{n+1} \binom{2n}{n}$
@@ -146,6 +148,13 @@ $\left(\binom{a}{b}\right) = \binom{a+b-1}{b} = \binom{a+b-1}{a-1}$
 
 
 \section{Testing}
+\subsection{Gen and AutoRun testcases}
+\subsubsection{Gen.cpp}
+\cppfile{Testing/gen.cpp}
+\subsubsection{Stress testing}
+\lstinputlisting[language={bash}]{Testing/test.sh}
+\subsubsection{Autorun}
+\lstinputlisting[language={bash}]{Testing/runAllTests.sh}
 \subsection{Highly Composite Numbers}
 Particularly useful when testing number theoretical solutions.
 \lstinputlisting[language={}]{Testing/highlycomposite.txt}
