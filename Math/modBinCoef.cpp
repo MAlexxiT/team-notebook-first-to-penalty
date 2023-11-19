@@ -1,4 +1,4 @@
-long long int inf = 10000000007;
+long long int inf = 1000000007;
 //cat[n] = bincoef(2*n,n)/(n+1), cat[0] = 1 
 class binCoef{
     long long int lim;
