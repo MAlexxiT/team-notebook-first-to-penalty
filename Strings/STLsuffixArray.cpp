@@ -2,27 +2,10 @@
 #define ub 1000000LL
 //pot de ub times two
 #define ccd 12
-
 //metodos y structs auxiliares para el suffix array
-struct sufd{int id;long long int t;};
-int getndigit(long long int num, int d){
-    while(d--) num/=10LL;
-    return (int) (num%10LL);
-}
-void radixSort(vector<sufd>& arr){
-    int count[10]; int n = arr.size();
-    vector<sufd> aux(n);
-    for(int d = 0; d<ccd; d++){
-        for(int i = 0; i<10; i++) count[i] = 0;
-        for(int i = 0; i<n; i++) count[getndigit(arr[i].t,d)]++;
-        for(int i = 1; i<10; i++) count[i]+=count[i-1];
-        for(int i = n-1; i>=0; i--){
-            count[getndigit(arr[i].t,d)]--;
-            aux[count[getndigit(arr[i].t,d)]] = arr[i];
-        }
-        for(int i = 0; i<n; i++) arr[i] = aux[i];
-    }
-}
+struct sufd{int id;long long int t;
+    bool operator<(const sufd b) const{return t<b.t;}
+};
 //El suffix array mismo, agregar caracter menor al alfabeto al final de T
 string T,P;
 int* sa,*lcest;
@@ -40,7 +23,7 @@ void makesa(){
             arr.push_back(aux);
         }
         //en caso de TLE calar con STL sort
-        radixSort(arr);
+        sort(arr.begin(),arr.end());
         sa[0] = arr[0].id; ra[sa[0]] = 0;
         for(int i = 1; i<n; i++){
             sa[i] = arr[i].id; 
@@ -106,6 +89,33 @@ int buscar(){
     int n = T.size();
     if(P.size()>n) return -1;
     return buscarRec(1,n-1,0,0);
+}
+pair<int,int> primeraYUltimaOc(){
+    int sai = buscar();
+    pair<int,int>res = {sai,sai};
+    if(sai==-1) return res;
+
+    int l,r,m;
+
+    r = sai-1; l = 0;
+    while(l<=r){
+        m = (l+r)/2;
+        if(getlce(m+1,sai)>=P.size()){
+            res.first = m; r = m-1;
+        }else{
+            l = m+1;
+        }
+    }
+    l = sai+1;r  = T.size()-1;
+    while(l<=r){
+        m = (l+r)/2;
+        if(getlce(sai+1,m)>=P.size()){
+            res.second = m; l = m+1;
+        }else{
+            r = m-1;
+        }
+    }
+    return res;
 }
 //CODIGO DE 100 LINEAS, TE HE FALLADO MarcosK
 //Uso: lee T, agregar signo dolar, llama makesa(); makelce(); lee P para despues buscar()

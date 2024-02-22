@@ -1,4 +1,4 @@
-long long int inf = 10000000007;
+long long int inf = 1000000007;
 long long int gcd(long long int a, long long int b, long long int& x, long long int& y) {
     x = 1, y = 0;
     long long int x1 = 0, y1 = 1, a1 = a, b1 = b;

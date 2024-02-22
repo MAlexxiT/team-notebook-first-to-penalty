@@ -1,2 +1,7 @@
 cd /mnt/c/Users/Mauricio/Documents/ICPC/team-notebook-first-to-penalty
 pdflatex tno.tex
+
+
+git add .
+git commit -m "MSG"
+git push
