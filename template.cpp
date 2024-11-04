@@ -1,5 +1,5 @@
 #include "bits/stdc++.h"
-//assert(x>0) si falla da RTE
+//assert(true/false) false leads to a RTE
 using namespace std;
 #define endl '\n'
 #define DBG(x) cerr<<#x<< "=" << (x) << endl;
@@ -8,16 +8,15 @@ using namespace std;
 //#define DBG(x) ;
 //#define RAYA ;
 //#define RAYAS ;
+void solve(){
 
-//--------------------SOLBEGIN---------------------------------
+}
+//--------------------SOLBEGIN-----------------------------------
 int main() {
 	ios_base::sync_with_stdio(false); cout.tie(NULL); cin.tie(NULL);
-	int tC;
+	int tC; cin>>tC;
 
-	cin >> tC;
-	while (tC--) {
-
-	}
+	while(tC--) solve();
 
 }
 //--------------------EOSOLUTION---------------------------------
