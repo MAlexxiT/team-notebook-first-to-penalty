@@ -48,83 +48,200 @@
 \subsection{LCA using Binary Lifting}
 \cppfile{Graphs/lcaBinaryLifting.cpp}
 \section{Math}
-\subsection{Identities}
-{
-\textbf{Coeficientes binomiales.}
+\subsection{Coeficientes binomiales. (Combinaciones n en k)}
+\begin{justify}
+Una combinación es una forma de elegir $k$ elementos de un grupo de tamaño $n$, sin importar el orden en que los eliges.
+\end{justify}
+\begin{equation*}
+    \binom{n}{k} = \frac{n!}{k!(n-k)!}
+\end{equation*}
+\begin{equation*}
+    (a+b)^{n} = \sum_{k = 0}^{n} \binom{n}{k}a^{n-k}b^{k}
+\end{equation*}
+\begin{equation*}
+    \binom{n}{k} = \binom{n}{n-k}
+\end{equation*}
+\begin{equation*}
+    \binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}
+\end{equation*}
+\begin{equation*}
+    k\binom{n}{k} = n\binom{n-1}{k-1}
+\end{equation*}
+\begin{equation*}
+    \sum_{k = 0}^{n}\binom{n}{k} = 2^{n}
+\end{equation*}
+\begin{equation*}
+    \sum_{k = 0}^{n} (-1)^{k}\binom{n}{k} = 0
+\end{equation*}
+\begin{equation*}
+    \binom{n+m}{t} = \sum_{k = 0}^{t}\binom{n}{k}\binom{m}{t-k}
+\end{equation*}
+\begin{equation*}
+    \sum_{j = k}^{n} \binom{j}{k} = \binom{n+1}{k+1}
+\end{equation*}
 
-$(a+b)^{n} = \Sigma_{k = 0}^{n} \binom{n}{k}a^{n-k}b^{k}$
-
-$\binom{n}{k} = \binom{n}{n-k}$
-
-$\binom{n}{k} = \binom{n-1}{k} + \binom{n-1}{k-1}$
-
-$k\binom{n}{k} = n\binom{n-1}{k-1}$
-
-$\Sigma_{k = 0}^{n}\binom{n}{k} = 2^{n}$
-
-$\Sigma_{k = 0}^{n} (-1)^{k}\binom{n}{k} = 0$
-
-$\binom{n+m}{t} = \Sigma_{k = 0}^{t}\binom{n}{k}\binom{m}{t-k}$
-
-$\Sigma_{j = k}^{n} \binom{j}{k} = \binom{n+1}{k+1}$
-
-\textbf{Numeros Catalanes.}
-
-$C_n = \frac{2(2n-1)}{n+1} C_{n-1}$
-
-$C_n = \frac{1}{n+1} \binom{2n}{n}$
-
-$C_n \sim \frac{4^n}{n^{3/2}\sqrt{\pi}}$
-
-$\Sigma(n) = O(\log(\log(n)))$ (number of divisors of $n$)
-
-$F_{2n+1} = F_{n}^2 + F_{n+1}^2$
-
-$F_{2n} = F_{n+1}^2 - F_{n-1}^2$
-
-$\sum_{i=1}^n F_i = F_{n+2}-1$
-
-$F_{n+i}F_{n+j} - F_nF_{n+i+j} = (-1)^n F_iF_j$
-
-\textbf{(Möbius Function)}
-
-0 if n is square-free
-
-1 if n got even amount of distinct prime factors
-
-0 if n got odd amount of distinct prime factors
-
-\textbf{(Möbius Inv. Formula)}
-
-Let $g(n) = \sum_{d\mid n} f(d)$, then $f(n)=\sum{d\mid n} g(d) \mu\left(\frac{n}{d})\right)$.
+\Longstack[l]{
+n=0\\
+n=1\\
+n=2\\
+n=3\\
+n=4\\
+n=5\\
+n=6\qquad\ \\
 }
+\Longstack{
+1\\
+1\x 1\\
+1\x 2\x 1\\
+1\x 3\x 3\x 1\\
+1\x 4\x 6\x 4\x 1\\
+1\x 5\y 10\z 10\y 5\x 1\\
+1\x 6\y 15\z 20\z 15\y 6\x 1\\
+\overline{0\x 1\x 2\x 3\x 4\x 5\x 6}
+}
+\Longstack[l]{
+n=0\\
+n=1\\
+n=2\\
+n=3\\
+n=4\\
+n=5\\
+n=6\qquad\ \\
+}
+\Longstack[l]{
+1\\
+1\x 1\\
+1\x 2\x 1\\
+1\x 3\x 3\x 1\\
+1\x 4\x 6\x 4\x 1\\
+1\x 5\y 10\z 10\y 5\x 1\\
+1\x 6\y 15\z 20\z 15\y 6\x 1\\
+\overline{0\x 1\x 2\x 3\x 4\x 5\x 6}
+}
+
+\subsection{Numeros catalanes}
+\begin{justify}
+Los números de Catalan son una secuencia de números enteros que aparecen en varios problemas combinatorios y estructurales en matemáticas. Se utilizan para contar estructuras específicas que siguen reglas particulares, como el número de maneras de emparejar paréntesis correctamente, las maneras de dividir un polígono convexo en triángulos, o las maneras de construir árboles binarios completos.
 \\
+Los números de Catalan también se aplican en la cuenta de caminos específicos, aunque no para cualquier tipo de camino. En particular, se usan para contar caminos restringidos en una cuadrícula.
+\\
+Un ejemplo clásico es el conteo de caminos que van desde el punto $(0,0)$ hasta el punto $(n,n)$ en una cuadrícula, avanzando solo hacia la derecha o hacia abajo, pero con la condición de que el camino nunca debe cruzar la diagonal principal (es decir, que en todo momento debe estar por encima o sobre la línea $y = x$. En este contexto, el número de caminos que cumplen esta restricción para una cuadrícula de tamaño $n$ es el n-ésimo número de Catalan.
+\end{justify}
+\begin{equation*}
+    C_{n+1} = \sum_{i=0}^nC_iC_{n-i}
+\end{equation*}
+%Una fórmula cerrada para los números de Catalán es:
+\begin{equation*}
+    C_n = \frac{1}{n+1}\binom{2n}{n} = \binom{2n}{n} - \binom{2n}{n+1}
+\end{equation*}
+
+\begin{equation*}
+    C_n = \frac{2(2n-1)}{n+1} C_{n-1}
+\end{equation*}
+
+\begin{equation*}
+    C_n \approx \frac{4^n}{n^{3/2}\sqrt{\pi}}
+\end{equation*}
+
+\subsection{Separadores o barras y estrellas}
+\begin{justify}
+En combinatoria, el método de separadores (o barras y estrellas) es una técnica para contar formas de dividir $n$ objetos idénticos en $k$ grupos.
+\\
+Imagina que tienes $n$ caramelos idénticos y quieres repartirlos entre $k$ niños. Para resolver esto, colocas $k-1$ separadores entre los caramelos, dividiendo el total en $k$ partes. Cada parte representa la cantidad de caramelos que cada niño recibe, y puede ser cero.
+\\
+El numero de formas de hacer esto es $\binom{n+k-1}{k-1}$ ya que estamos eligiendo posiciones para los separadores entre los $n+k-1$ espacios disponibles.
+\end{justify}
+\begin{equation*}
+    \left(\binom{n}{k}\right) = \binom{n-1}{k-1} = \binom{n+k-1}{k-1}
+\end{equation*}
+
+
+\subsection{Permutaciones}
+\begin{justify}
+Una permutación es una forma de elegir y organizar $k$ elementos de un grupo de tamaño $n$, donde el orden sí importa. (i.e. 1,2,3 es diferente a 3,1,2)
+\end{justify}
+\begin{equation*}
+    P(n,k) = \frac{n!}{(n-k)!}
+\end{equation*}
 \textbf{Permutaciones objetos repetidos}
+\begin{justify}
+Si existen elementos iguales entre los que hay que elegir (i.e. CARTA tiene dos 'A'), definamos la cantidad que ocurre el i-esimo elemento como $am_{i}$ (as in amount)-
+\end{justify}
+\begin{equation*}
+    P(n,k) = \frac{P(n,k)}{e_{1}!e_{2}!...} = \frac{n!}{(n-k)!e_{1}!e_{2}!...}
+\end{equation*}
+\subsection{Derangement} 
+\begin{justify}
+Un Derangement es una permutación que no deja ningún elemento en su lugar original.
+\end{justify}
+      \begin{equation*}
+        Derangement(n)=
+        \begin{cases}
+			0 & \text{si $n = 1$}.\\
+			1 & \text{si $n = 2$}.\\
+			(n - 1)( Derangement(n - 1) + Derangement(n - 2) ) & \text{otherwise}.\\
+		\end{cases}
+      \end{equation*}
 
-$P(n,k) = \frac{P(n,k)}{n_{1}!n_{2}!...}$ 
+      \begin{equation*}
+        Derangement(n) = n! \sum_{k = 0}^n \frac{(-1)^k}{k!}
+      \end{equation*}
+\subsection{Numeros de Fibonacci}
+\begin{equation*}
+  F_{n} = F_{n-1}+F_{n-2} 
+\end{equation*}
+\begin{equation*}
+  F_{2n+1} = F_{n}^2 + F_{n+1}^2
+\end{equation*}
+\begin{equation*}
+    F_{2n} = F_{n+1}^2 - F_{n-1}^2
+\end{equation*}
+\begin{equation*}
+    \sum_{i=1}^n F_i = F_{n+2}-1
+\end{equation*}
+\begin{equation*}
+    F_{n+i}F_{n+j} - F_nF_{n+i+j} = (-1)^n F_iF_j
+\end{equation*}
+\subsection{Cantidad de divisores}
+\begin{justify}
+Para encontrar la cantidad de divisores de un número, se usa su \textit{factorización prima}. Supongamos que un número $ N$ se factoriza como:
+\end{justify}
+\begin{equation*}
+    N = p_1^{e_1} \times p_2^{e_2} \times \cdots \times p_k^{e_k}
+\end{equation*}
+\begin{justify}
+donde ($p_1, p_2, \dots, p_k$) son los factores primos distintos de $N$, y ($e_1, e_2, \dots, e_k$) son sus respectivos exponentes.
 \\
-\textbf{Separadores, Ecuaciones lineares $a$ variables $= b$}
-  
-$\left(\binom{a}{b}\right) = \binom{a+b-1}{b} = \binom{a+b-1}{a-1}$
+Para obtener la cantidad total de divisores de $N$, se toma cada exponente, se le suma uno, y luego se multiplican todos estos valores:
+\end{justify}
+\begin{equation*}
+    \text{Cantidad de divisores} = (e_1 + 1) \times (e_2 + 1) \times \cdots \times (e_k + 1)
+\end{equation*}
+\begin{justify}
+Para fines de programacion competitiva, considera que $N$ tiene aproximadamente $\sqrt[3]{N}$ divisores.
+\end{justify}
+\subsection{Respuesta modulo m}
+\begin{justify}
+En programacion competitiva, es comun encontrar problemas cuya respuesta pueda exceder el limite de long long int de C++ ($10^{18}$), por lo que para mantener la respuesta en un rango aceptable se pide calcularla modulo $m$.
+\\
+Para calcular una respuesta modulo $m$, es necesario construir el codigo tomando en cuenta las siguientes propiedades.
+\end{justify}
+\begin{equation*}
+    (a+b)\%m = (a\%m + b\%m)\%m
+\end{equation*}
 
-\textbf{Teorema chino}
-
-sean $\{n_{1}, n_{2},..., n_{k} \}$ primos relativos\\
-
-$P = n_{1}\cdot n_{2}\cdot ...\cdot n_{k}$
-
-$P_{i} = \frac{P}{n_{i}}$
-
-$x\cong a_{1}(n_{1})$
-
-$x\cong a_{2}(n_{2})$
-$...$
-$x\cong a_{k}(n_{k})$
-
-$P_{1}S_{1} \cong 1(n_{1})$ Donde $S$ soluciones.
-
-$x = P_{1}S_{1}a_{1} + P_{2}S_{2}a_{2} ... P_{k}S_{k}a_{k}$
-
+\begin{equation*}
+    (a-b)\%m = (a\%m - b\%m + m)\%m
+\end{equation*}
+\begin{equation*}
+    (a*b)\%m = (a\%m * b\%m)\%m
+\end{equation*}
+\begin{justify}
+En el caso de divisiones es necesario calcular el inverso modular del divisor, expresado por $b^{-1}$, esto esta codificado en modinverse.
+\end{justify}
+\begin{equation*}
+    (a/b)\%m = (a\%m * (b^{-1})\%m)\%m
+\end{equation*}
 
 \subsection{Binary Exponentiation and modArith}
 \cppfile{Math/binpow.cpp}
@@ -197,7 +314,7 @@ Es multiplicativa
 \cppfile{Flow/dinic.cpp}
 
 \section{Miscellaneous}
-\subsection{pbds}
+\subsection{pbds (Ordered set)}
 \cppfile{Miscellaneous/synpbds.cpp}
 \subsection{Bit Manipulation}
 \cppfile{Miscellaneous/bitManip.cpp}
